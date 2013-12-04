@@ -1,0 +1,4 @@
+PingPongTM
+==========
+
+Projekt zespołowy
