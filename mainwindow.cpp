@@ -52,7 +52,7 @@ void MainWindow::button2Clicked()
 
 void MainWindow::button3Clicked()
 {
-
+    //to implement
 }
 
 void MainWindow::clearLayout(QLayout* lay)
