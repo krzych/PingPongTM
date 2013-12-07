@@ -8,6 +8,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "examplewidget.h"
+#include "profilemanagement.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     //connect button to signals
-    connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(button1Clicked()));
+    connect(ui->Profile,SIGNAL(clicked()),this,SLOT(button1Clicked()));
     connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(button2Clicked()));
     connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(button3Clicked()));
 
@@ -30,14 +31,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::button1Clicked()
+
+void MainWindow::on_Profile_clicked()
 {
     //clear main frame
     clearLayout(m_mainFrameLayout);
 
-    ExampleWidget* exWidget = new ExampleWidget(this);
-    m_mainFrameLayout->addWidget(exWidget);
+    ProfileManagement* myProfilManagement = new ProfileManagement(this);
+    m_mainFrameLayout->addWidget(myProfilManagement);
 }
+
+
 
 void MainWindow::button2Clicked()
 {
@@ -72,3 +76,5 @@ void MainWindow::clearLayout(QLayout* lay)
         delete item;
     }
 }
+
+

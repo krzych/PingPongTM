@@ -24,9 +24,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void button1Clicked();
+
     void button2Clicked();
     void button3Clicked();
+
+    void on_Profile_clicked();
 
 private:
     void clearLayout(QLayout* lay);

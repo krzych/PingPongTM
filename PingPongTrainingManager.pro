@@ -12,10 +12,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    examplewidget.cpp
+    examplewidget.cpp \
+    profilemanagement.cpp \
+    addnewprofile.cpp
 
 HEADERS  += mainwindow.h \
-    examplewidget.h
+    examplewidget.h \
+    profilemanagement.h \
+    addnewprofile.h
 
 FORMS    += mainwindow.ui \
-    examplewidget.ui
+    examplewidget.ui \
+    profilemanagement.ui \
+    addnewprofile.ui
