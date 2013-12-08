@@ -36,11 +36,31 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>80</y>
+     <y>90</y>
      <width>521</width>
      <height>192</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>Siła</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Rotacja</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Pozycja</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Kąt</string>
+    </property>
+   </column>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -64,7 +84,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Siła :</string>
+     <string>Siła [%] :</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -90,7 +110,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Kąt :</string>
+     <string>Kąt [°] :</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -119,17 +139,7 @@
      <string>Ilość :</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="amountTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>50</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QSlider" name="positionlSlider">
+   <widget class="QSlider" name="positionSlider">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -142,26 +152,6 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QTextEdit" name="positionTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>50</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="angleTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>50</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QSlider" name="angleSlider">
     <property name="geometry">
      <rect>
@@ -170,6 +160,12 @@
       <width>61</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="minimum">
+     <number>-45</number>
+    </property>
+    <property name="maximum">
+     <number>45</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -180,22 +176,12 @@
      <rect>
       <x>10</x>
       <y>60</y>
-      <width>61</width>
+      <width>51</width>
       <height>20</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="powerTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>50</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton">
@@ -222,6 +208,46 @@
     </property>
     <property name="text">
      <string>Wsteczna</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="powerSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="angleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>60</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="positionSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>60</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="amountSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>60</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>
