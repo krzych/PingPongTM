@@ -9,6 +9,7 @@
 #include "ui_mainwindow.h"
 #include "examplewidget.h"
 #include "profilemanagement.h"
+#include "configuretraining.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //connect button to signals
     connect(ui->Profile,SIGNAL(clicked()),this,SLOT(button1Clicked()));
-    connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(button2Clicked()));
+    connect(ui->configureButton,SIGNAL(clicked()),this,SLOT(on_configureButton_clicked()));
     connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(button3Clicked()));
 
     m_mainFrameLayout = new QGridLayout(ui->mainFrame);
@@ -41,16 +42,12 @@ void MainWindow::on_Profile_clicked()
     m_mainFrameLayout->addWidget(myProfilManagement);
 }
 
-
-
-void MainWindow::button2Clicked()
+void MainWindow::on_configureButton_clicked()
 {
-    //clear main frame
     clearLayout(m_mainFrameLayout);
 
-    //inne widgety
-    ExampleWidget* exWidget = new ExampleWidget(this);
-    m_mainFrameLayout->addWidget(exWidget);
+    ConfigureTraining* configureTraining = new ConfigureTraining(this);
+    m_mainFrameLayout->addWidget(configureTraining);
 
 }
 

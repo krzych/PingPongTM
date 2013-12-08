@@ -14,14 +14,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     examplewidget.cpp \
     profilemanagement.cpp \
-    addnewprofile.cpp
+    addnewprofile.cpp \
+    configuretraining.cpp
 
 HEADERS  += mainwindow.h \
     examplewidget.h \
     profilemanagement.h \
-    addnewprofile.h
+    addnewprofile.h \
+    configuretraining.h
 
 FORMS    += mainwindow.ui \
     examplewidget.ui \
     profilemanagement.ui \
-    addnewprofile.ui
+    addnewprofile.ui \
+    configuretraining.ui
