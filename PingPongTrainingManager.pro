@@ -15,13 +15,16 @@ SOURCES += main.cpp\
     examplewidget.cpp \
     profilemanagement.cpp \
     addnewprofile.cpp \
-    configuretraining.cpp
+    configuretraining.cpp \
+    hit.cpp
 
 HEADERS  += mainwindow.h \
     examplewidget.h \
     profilemanagement.h \
     addnewprofile.h \
-    configuretraining.h
+    configuretraining.h \
+    hit.h \
+    overloads.h
 
 FORMS    += mainwindow.ui \
     examplewidget.ui \

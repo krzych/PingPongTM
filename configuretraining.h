@@ -2,6 +2,8 @@
 #define CONFIGURETRAINING_H
 
 #include <QWidget>
+#include "hit.h"
+//#include "overloads.h"
 
 namespace Ui {
 class ConfigureTraining;
@@ -14,6 +16,11 @@ class ConfigureTraining : public QWidget
 public:
     explicit ConfigureTraining(QWidget *parent = 0);
     ~ConfigureTraining();
+
+    void show();
+
+    friend QDataStream &operator <<(QDataStream &out, const QList<Hit> *hits);
+    //friend QDataStream &operator >>(QDataStream &out, QList<Hit> *hits);
 
 private slots:
     void on_addButton_clicked();
@@ -33,6 +40,12 @@ private slots:
     void on_generateButton_clicked();
 
     void on_deleteButton_clicked();
+
+
+
+    void on_mixButton_clicked();
+
+    void on_loadButton_clicked();
 
 private:
     Ui::ConfigureTraining *ui;
