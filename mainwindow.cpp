@@ -48,6 +48,7 @@ void MainWindow::on_configureButton_clicked()
 
     ConfigureTraining* configureTraining = new ConfigureTraining(this);
     m_mainFrameLayout->addWidget(configureTraining);
+    Training* training = new Training();
 
 }
 

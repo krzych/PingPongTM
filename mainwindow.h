@@ -10,6 +10,7 @@
 
 #include <QMainWindow>
 #include <QGridLayout>
+#include "training.h"
 
 namespace Ui {
     class MainWindow;

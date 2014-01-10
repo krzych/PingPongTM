@@ -1,6 +1,8 @@
 #ifndef HIT_H
 #define HIT_H
 
+
+
 class Hit
 {
 public:

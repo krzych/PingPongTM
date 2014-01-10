@@ -28,42 +28,42 @@ void ConfigureTraining::on_addButton_clicked()
     {
         hits->append( *(new Hit(ui->powerSlider->value(),ui->radioButton->isChecked(),ui->angleSlider->value(),ui->positionSlider->value())));
     }
-
     ConfigureTraining::show();
 }
 
 
 void ConfigureTraining::on_generateButton_clicked()
 {
-    /*QFile file ("C:/Parametry_treningu.txt");
+
+    QFile file("C://Parametry2.xml");
     file.open(QIODevice::WriteOnly);
+    int i=0;
+   QXmlStreamWriter *xmlWriter = new QXmlStreamWriter(&file);
+    xmlWriter->writeStartDocument();
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartElement("Uderzenia");
+    xmlWriter->writeAttribute("Ilosc", QString::number(hits->size()));
 
-    QDataStream out(&file);
-    out.setVersion(QDataStream::Qt_4_8);
-
-    out<< hits;
-
-
-    file.flush();
-    file.close();*/
-
-    QFile file("C://Parametry treningu.txt");
-    file.open(QIODevice::WriteOnly);
-    QTextStream textStream(&file);
     for(int i=0;i<hits->size();i++)
     {
-        textStream<<hits->at(i).power<<","<<hits->at(i).rotation<<","<<endl;
+
+        xmlWriter->writeStartElement("Uderzenie");
+        xmlWriter->writeTextElement("Sila",QString::number(hits->at(i).power));
+        if(hits->at(i).rotation!=0)
+        {
+            xmlWriter->writeTextElement("Rotacja",ui->radioButton->text());
+        }
+        if(hits->at(i).rotation==0)
+        {
+            xmlWriter->writeTextElement("Rotacja",ui->radioButton_2->text());
+        }
+        xmlWriter->writeTextElement("Kat",QString::number(hits->at(i).angle));
+        xmlWriter->writeTextElement("Pozycja",QString::number(hits->at(i).position));
+        xmlWriter->writeEndElement();
     }
-    textStream.flush();
-    file.close();
-    /*
-    QXmlStreamWriter *xmlWriter = new QXmlStreamWriter();
-    xmlWriter->setDevice(&file);
-    xmlWriter->writeStartDocument();
-    xmlWriter->writeStartElement("Wygenerowane parametry treningu");
     xmlWriter->writeEndElement();
     xmlWriter->writeEndDocument();
-    file.close();*/
+    file.close();
 }
 
 void ConfigureTraining::on_loadButton_clicked()
@@ -129,27 +129,6 @@ void ConfigureTraining::on_mixButton_clicked()
 
     ConfigureTraining::show();
 }
-
-QDataStream &operator <<(QDataStream &out,const QList<Hit> *hits)
-{
-    //out<<hit.power <<hit.rotation <<hit.angle <<hit.position;
-    for(int i=0;i<hits->size();i++)
-    {
-        out<< hits->at(i).power <<hits->at(i).rotation <<hits->at(i).angle <<hits->at(i).position;
-    }
-    return out;
-}
-
-/*QDataStream &operator >>(QDataStream &out, QList<Hit> *hits);
-{
-    hits = *(QList<Hit>());
-    while
-    {
-        in>> hits->at(i).power >>hits->at(i).rotation >>hits->at(i).angle >>hits->at(i).position;
-    }
-    return in;
-}*/
-
 
 
 void ConfigureTraining::on_powerSlider_valueChanged(int value)

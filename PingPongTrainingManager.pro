@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     profilemanagement.cpp \
     addnewprofile.cpp \
     configuretraining.cpp \
-    hit.cpp
+    hit.cpp \
+    training.cpp
 
 HEADERS  += mainwindow.h \
     examplewidget.h \
@@ -24,7 +25,7 @@ HEADERS  += mainwindow.h \
     addnewprofile.h \
     configuretraining.h \
     hit.h \
-    overloads.h
+    training.h
 
 FORMS    += mainwindow.ui \
     examplewidget.ui \
