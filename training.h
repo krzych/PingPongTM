@@ -8,7 +8,11 @@ class Training
 {
 public:
     Training();
-   // QList<Hit> *hits = new QList<Hit>();
+    QList<Hit> hits;
+    int power;
+    void addHit(int pow, bool rot, int ang=0, int pos=0);
+    void serialize();
+    void deserialize();
 };
 
 #endif // TRAINING_H

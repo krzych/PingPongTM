@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "hit.h"
-//#include "overloads.h"
+#include "training.h"
 
 namespace Ui {
 class ConfigureTraining;
@@ -16,10 +16,12 @@ class ConfigureTraining : public QWidget
 public:
     explicit ConfigureTraining(QWidget *parent = 0);
     ~ConfigureTraining();
+    Training *training;
 
     void show();
+    //void show(Training training);
 
-    friend QDataStream &operator <<(QDataStream &out, const QList<Hit> *hits);
+    //friend QDataStream &operator <<(QDataStream &out, const QList<Hit> *hits);
     //friend QDataStream &operator >>(QDataStream &out, QList<Hit> *hits);
 
 private slots:
